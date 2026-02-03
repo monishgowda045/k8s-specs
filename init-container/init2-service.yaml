@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myservices
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
