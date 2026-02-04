@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemon-set-demo
+  labels:
+    app: daemon-set-demo  
+  ec:
+  selector: 
+    matchLabels:
+      app: daemon-set-demo  
+  template:
+    metadata:
+      labels:
+        app: daemon-set-demo  
+    spec:
+      containers:
+      - name: daemon-set-demo
+        image: httpd
