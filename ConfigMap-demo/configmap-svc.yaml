@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: pod-env12
+spec:
+  containers:
+    - name: env-var-container
+      image: nginx:1.7.9
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+      valueFrom:
+        - configMapRef:
+            name: demo-configmap
+            key: database #if we r using specific key use valuerom #16
