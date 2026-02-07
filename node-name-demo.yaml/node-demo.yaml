@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-name-demo
+  labels:
+    env: test
+spec:
+  nodeName: your-node-name-here
+  containers: 
+  - name: nginx
+    image: nginx

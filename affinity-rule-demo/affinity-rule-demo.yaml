@@ -1,0 +1,15 @@
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: affinity-rule-demo
+spec:
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: color
+            operator: In
+            values:
+            - blue

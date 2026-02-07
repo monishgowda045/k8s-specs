@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multiport-demo
+  labels:
+    app: multiport-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multiport-demo
+  template:
+    metadata:
+      labels:
+        app: multiport-demo
+    spec:
+      containers:
+      - name: multiport-demo
+        image: docker.io/openshift/hello-openshift:latest
+        ports:
+        - containerPort: 8080
+        - containerPort: 8888

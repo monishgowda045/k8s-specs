@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: service
+metadata:
+  name: multiport-service
+  labels:
+    app: multiport-demo
+spec:
+  selector:
+    app: multiport-demo
+  ports:
+  - name: port1
+    protocol: TCP
+    port: 18080
+    targetPort: 8080
+  - name: port2
+    protocol: TCP
+    port: 18888
+    targetPort: 8888

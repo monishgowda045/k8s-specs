@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-selector-demo
+  labels:
+    env: test1
+spec:
+  nodeSelector:
+    env: simplilearn
+  containers: 
+  - name: nginx
+    image: nginx
